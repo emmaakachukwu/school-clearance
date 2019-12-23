@@ -38,6 +38,6 @@ export class DataService {
 
   //for sending payloads to the backend
   postMethod ( payLoad ) {
-    return this.http.post ("http://localhost/project/projectapi.php", JSON.stringify(payLoad));
+    return this.http.post ("http://localhost/school-clearance-project/api/projectapi.php", JSON.stringify(payLoad));
   }
 }
