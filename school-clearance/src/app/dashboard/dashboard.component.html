@@ -1,0 +1,18 @@
+<body>
+<mat-progress-bar id="progressBar" mode="indeterminate" *ngIf="showProgress"></mat-progress-bar>
+<mat-toolbar id="toolbar">
+  <button mat-button routerLink='/main/dashboard' title="Home" style="margin-right: 15px;"><mat-icon>home</mat-icon></button>
+  <span style="font-size: 14px;">{{head}}</span>
+  <span class="spacer"></span>
+  <button id="accountcircle" mat-button [matMenuTriggerFor]='menu' title="user"><span style="font-size: 12px">{{user}}</span><mat-icon id='user'>account_circle</mat-icon>
+  </button>
+  <mat-menu #menu='matMenu'>
+    <button mat-menu-item routerLink='result'>View Results</button>
+    <button mat-menu-item routerLink='/main/clearance_table'>Clearance Table</button>
+    <button mat-menu-item (click)='onLogout()'>Logout</button>
+  </mat-menu>
+</mat-toolbar>
+<div id="content">
+  <router-outlet></router-outlet>
+</div>
+</body>

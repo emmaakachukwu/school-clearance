@@ -1,0 +1,44 @@
+<body>
+    <p id="progress">Clearance Progress: <b>{{progressValue}}%</b></p>
+    <mat-progress-bar mode='determinate' [value]='progressValue'></mat-progress-bar><br>
+    <mat-grid-list [cols]='breakpoint' rowHeight='2:1' gutterSize='10px' (window:resize)="onResize($event)">
+        <mat-grid-tile *ngFor='let c of clearanceGrid; let i = index' [style.background]='c.background' [style.color]='c.color'>
+            <div>
+                <p>{{c.payment}}</p>
+                <p *ngIf='c.value==1' style="font-family: 'Abel'; font-style: italic; text-align: center">(cleared)</p>
+                <p *ngIf='c.value==0' style="font-family: 'Abel'; font-style: italic; text-align: center">(not cleared)</p>
+            </div>
+        </mat-grid-tile>
+    </mat-grid-list>
+    <mat-card>
+        <h3>{{completed}}</h3>
+        <button mat-raised-button *ngIf='hidebtn' id="button" routerLink='/main/clearance'>{{btnlbl | uppercase}}</button><br>
+        <button mat-button class="procedures" (click)='scroll()'>See Instructions</button>
+    </mat-card><br>
+
+    <mat-card id="howto">
+        <h2>Procedure</h2><br>
+        <div>
+            <mat-icon>account_balance</mat-icon><br>
+            <p>Departmental Clearance</p>
+            <mat-icon>arrow_downward</mat-icon><br>
+            <mat-icon>account_balance</mat-icon><br>
+            <p>Faculty Clearance</p>
+            <mat-icon>arrow_downward</mat-icon><br>
+            <mat-icon>account_balance</mat-icon><br>
+            <p>Bursary Clearance</p>
+        </div>
+    </mat-card>
+
+    <mat-card class="howto">
+        <!-- <mat-icon matPrefix>account_balance</mat-icon><span>Departmental Clearance</span> -->
+        <p>Instructions</p>
+        <mat-list>
+            <mat-list-item>1. Click on Start/Continue Clearance</mat-list-item>
+            <mat-list-item>2. Input your teller / RRR number</mat-list-item>
+            <mat-list-item>3. Choose the payment you wish to clear</mat-list-item>
+            <mat-list-item>4. If available, choose the level for each payment</mat-list-item>
+            <mat-list-item>5. Click on the submit button</mat-list-item>
+        </mat-list>
+    </mat-card>
+</body>

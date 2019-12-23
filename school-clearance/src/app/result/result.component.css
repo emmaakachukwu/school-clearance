@@ -1,0 +1,42 @@
+button {
+    background-color: #2A4B8C;
+    color: #fff;
+}
+
+h5 {
+    font-size: 25px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: #2A4B8C;
+}
+
+#cgpa {
+    width: 100%;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    height: 50px;
+    padding: 10px;
+    background-color: #f1f1f1;
+    color: #2A4B8C;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+h3 {
+    background: #f1f1f1;
+    text-align: center;
+    padding: 25px;
+    width: 300px;
+    border-radius: 5px;
+    margin: auto;
+    font-family: cursive;
+}
+
+h3 span {
+    color: #2A4B8C;
+    font-size: 40px;
+}
+
+mat-card {
+    border-left: 1px solid #2A4B8C;
+}

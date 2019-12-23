@@ -1,0 +1,32 @@
+<mat-progress-bar id="progressBar" mode="indeterminate" *ngIf="showProgress"></mat-progress-bar>
+<mat-toolbar id="toolbar">
+    <img id="logo" src="../../assets/img/NAU.png" alt="NAU Logo" title="Nnamdi Azikiwe University">
+    <span id="nau">Nnamdi Azikiwe University</span>
+    <span class="spacer"></span>
+    <span id="ocs">Online Clearance System</span>
+</mat-toolbar>
+<body>
+    <div class="row">
+        <div class="col-md-6 logo">
+        </div>
+        <div class="col-md-4 login">
+            <h2>Login</h2>
+            <form (ngSubmit)="submit(a)" #a="ngForm">
+                <mat-form-field appearance="outline">
+                    <mat-label>Reg Number</mat-label>
+                    <mat-icon matPrefix>account_circle</mat-icon>
+                    <input matInput placeholder="enter your reg no." type="text" ngModel name="username" required>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Password</mat-label>
+                    <mat-icon matPrefix>lock</mat-icon>
+                    <input matInput placeholder="enter your password" type="password" ngModel name="password" required>
+                </mat-form-field>
+                <div>
+                    <mat-checkbox color='primary' ngModel name='remember'><b>Remember me</b></mat-checkbox>
+                </div>
+                <button mat-flat-button><b>Login</b></button>
+            </form>
+        </div>
+    </div>    
+</body>

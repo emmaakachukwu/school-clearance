@@ -1,0 +1,115 @@
+body {
+    padding: 30px;
+    background: #fff;
+}
+
+body .login {
+    max-width: 400px;
+    margin: auto;
+    margin-top: 100px;
+    background-color: #fff;
+    border-top: 5px solid #2A4B8C;
+    box-shadow: 5px 4px 5px #888888;
+    padding: 30px;
+}
+
+.login h2 {
+    color: #7796A6;
+    text-align: center;
+    margin-top: 40px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.logo {
+    margin-top: 100px;
+    background: url(../../assets/img/NAU.png) no-repeat center;
+}
+
+#logo {
+    height: 40px;
+    width: 40px;
+    border-radius: 50px;
+    margin-right: 10px;
+}
+
+.spacer {
+    flex: 1 1 auto;
+}
+
+mat-form-field {
+    width: 100%;
+}
+
+mat-checkbox {
+    color: #7796A6;
+    float: left;
+    font-size: 15px;
+}
+
+mat-icon {
+    margin-right: 10px;
+    color: #2A4B8C;
+}
+
+form #forgot {
+    text-align: right;
+    color: #B0DAFA;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 15px;
+}
+
+form button {
+    color: #fff;
+    background-color: #2A4B8C;
+    margin: 15px 0 25px;
+    width: 100%;
+    padding: 10px;
+    font-size: 20px;
+}
+
+form #signup {
+    text-align: center;
+    color: #B0DAFA;
+}
+
+#progressBar {
+    position: fixed;
+}
+
+#nau {
+    font-family: 'Saira Semi Condensed';
+    text-shadow: 4px 4px 4px #aaa;
+}
+
+#ocs {
+    font-family: 'Lobster';
+    text-shadow: 4px 4px 4px #aaa;
+}
+
+#toolbar {
+    position: fixed;
+    background: #2A4B8C;
+    top: 0;
+    z-index: 1;
+    height: 70px;
+    color: #fff;
+}
+
+@media (max-width: 768px) {
+    .logo {
+        height: 250px;
+        width: 100%;
+    }
+}
+
+@media (max-width: 650px) {
+    #nau, #ocs {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    #nau, #ocs {
+        font-size: 12px;
+    }
+}

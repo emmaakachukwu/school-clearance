@@ -1,0 +1,87 @@
+<body>
+    <mat-card *ngIf=" userInfo?.department_cleared == 0 ">
+        <h4>Departmental Clearance</h4>
+        <form (ngSubmit)="submit(a, 'd')" #a='ngForm'>
+            <mat-form-field>
+                <mat-label >Payment Number</mat-label>
+                <input matInput placeholder="Enter your Teller no / Reciept no / RRR" ngModel name="pno" required>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label >Choose Payment</mat-label>
+                <mat-select ngModel name='due' required>
+                    <mat-option *ngFor="let d of dues; let i = index" value='0{{i+1 + d.payment}}'>{{d.payment}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label >Choose Level</mat-label>
+                <mat-select ngModel name='level' required>
+                    <mat-option *ngFor="let l of levels" value='{{l.level}}'>{{l.level}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <button mat-button [disabled]='a.invalid'>SUBMIT</button>
+        </form>
+    </mat-card>
+
+    <mat-card *ngIf='userInfo?.department_cleared == 1 && userInfo?.faculty_cleared == 0'>
+        <h4>Faculty Clearance</h4>
+        <form (ngSubmit)="submit(a, 'f')" #a='ngForm'>
+            <mat-form-field>
+                <mat-label >Payment Number</mat-label>
+                <input matInput placeholder="Enter your Teller no / Reciept no / RRR" ngModel name="pno" required>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label >Choose Payment</mat-label>
+                <mat-select ngModel name='due' required>
+                    <mat-option *ngFor="let d of dues; let i = index" value='1{{i+1 + d.payment}}'>{{d.payment}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label >Choose Level</mat-label>
+                <mat-select ngModel name='level' required>
+                    <mat-option *ngFor="let l of levels" value='{{l.level}}'>{{l.level}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <button mat-button [disabled]='a.invalid'>SUBMIT</button>
+        </form>
+    </mat-card>
+
+    <mat-card *ngIf='userInfo?.bursary_cleared == 0 && userInfo?.department_cleared == 1 && userInfo?.faculty_cleared == 1'>
+        <h4>Bursary</h4>
+        <form (ngSubmit)="clearBursary(b)" #b='ngForm'>
+            <mat-form-field>
+                <mat-label >Payment Number</mat-label>
+                <input matInput placeholder="Enter your Teller no / Reciept no / RRR" ngModel name="pno" required>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label >Choose Payment</mat-label>
+                <mat-select ngModel name='due' required>
+                    <mat-option *ngFor="let b of bursaryPayments; let i = index" value='{{b.pid + b.payment}}'>{{b.payment}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label >Choose Session</mat-label>
+                <mat-select ngModel name='session' required>
+                    <mat-option *ngFor="let s of sessions" value='{{s}}'>{{s}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <button mat-button [disabled]='b.invalid'>SUBMIT</button>
+        </form>
+    </mat-card>
+
+    <mat-card *ngIf='userInfo?.others_cleared == 0 && userInfo?.bursary_cleared == 1 && userInfo?.department_cleared == 1 && userInfo?.faculty_cleared == 1'>
+        <h4>Other Payments</h4>
+        <form (ngSubmit)="clearOthers(c)" #c='ngForm'>
+            <mat-form-field>
+                <mat-label >Payment Number</mat-label>
+                <input matInput placeholder="Enter your Teller no / Reciept no / RRR" ngModel name="pno" required>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label >Choose Payment</mat-label>
+                <mat-select ngModel name='due' required>
+                    <mat-option *ngFor="let o of otherPayments; let i = index" value='{{o.pid + o.payment}}'>{{o.payment}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <button mat-button [disabled]='c.invalid'>SUBMIT</button>
+        </form>
+    </mat-card>
+</body>

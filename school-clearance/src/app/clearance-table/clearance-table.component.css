@@ -1,0 +1,18 @@
+/* h2, .userInfo {
+    font-family: sans-serif;
+} */
+
+tr td:last-child {
+    color: grey;
+    font-style: italic;
+}
+
+hr {
+    color: #2A4B8C;
+    height: 2px;
+    background: #2A4B8C;
+}
+
+mat-card {
+    border-left: 1px solid #2A4B8C;
+}

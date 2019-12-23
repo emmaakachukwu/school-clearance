@@ -1,0 +1,61 @@
+mat-card {
+    width: 400px;
+    margin: 100px auto;
+}
+
+#howto {
+    text-align: center;
+    width: 100%;
+    border-top: 2px solid #2A4B8C;
+    letter-spacing: 2px;
+}
+
+.howto {
+    width: 100%;
+    letter-spacing: 1px;
+    text-align: left;
+}
+
+#button {
+    display: block;
+    margin: auto;
+    letter-spacing: 2px;
+    font-size: 18px;
+    padding: 10px;
+    background: #2A4B8C;
+    color: #fff;
+}
+
+.procedures {
+    display: block;
+    margin: auto;
+}
+
+h3 {
+    text-align: center;
+}
+
+p {
+    font-family: sans-serif;
+}
+
+#progress {
+    font-family: 'Raleway';
+    font-size: 20px;
+}
+
+mat-grid-tile {
+    background: #f1f1f1;
+    color: #000;
+    border-radius: 5px;
+}
+
+mat-grid-tile div p:first-child {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+@media ( max-width: 550px ) {
+    mat-card {
+        width: auto;
+    }
+}

@@ -1,0 +1,118 @@
+<body>
+    <div *ngIf = "userResults">
+        <mat-card>
+            <h4>100 Level Results</h4>
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Course Title</th>
+                            <th>Course Code</th>
+                            <th>Score</th>
+                            <th>Credit Unit</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let r of userResults; let i = index">
+                            <td>{{i + 1}}</td>
+                            <td>{{r._100L_course_titles}}</td>
+                            <td>{{r._100L_course_codes}}</td>
+                            <td>{{r._100L_scores}}</td>
+                            <td>{{r._100L_cu}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <button mat-raised-button (click)="calcGP('100L')" *ngIf='hide100L'>Calculate GP for 100 Level</button>
+            <h5 *ngIf="!hide100L">{{GPs._100L}}</h5>
+        </mat-card><br>
+
+        <mat-card>
+            <h4>200 Level Results</h4>
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Course Title</th>
+                            <th>Course Code</th>
+                            <th>Score</th>
+                            <th>Credit Unit</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let r of userResults; let i = index">
+                            <td>{{i + 1}}</td>
+                            <td>{{r._200L_course_titles}}</td>
+                            <td>{{r._200L_course_codes}}</td>
+                            <td>{{r._200L_scores}}</td>
+                            <td>{{r._200L_cu}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <button mat-raised-button (click)="calcGP('200L')" *ngIf='hide200L'>Calculate GP for 200 Level</button>
+            <h5 *ngIf="!hide200L">{{GPs._200L}}</h5>
+        </mat-card><br>
+        
+        <mat-card>
+            <h4>300 Level Results</h4>
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Course Title</th>
+                            <th>Course Code</th>
+                            <th>Score</th>
+                            <th>Credit Unit</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let r of userResults; let i = index">
+                            <td>{{i + 1}}</td>
+                            <td>{{r._300L_course_titles}}</td>
+                            <td>{{r._300L_course_codes}}</td>
+                            <td>{{r._300L_scores}}</td>
+                            <td>{{r._300L_cu}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <button mat-raised-button (click)="calcGP('300L')" *ngIf='hide300L'>Calculate GP for 300 Level</button>
+            <h5 *ngIf="!hide300L">{{GPs._300L}}</h5>
+        </mat-card><br>
+    
+        <mat-card>
+            <h4>400 Level Results</h4>
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Course Title</th>
+                            <th>Course Code</th>
+                            <th>Score</th>
+                            <th>Credit Unit</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let r of userResults; let i = index">
+                            <td>{{i + 1}}</td>
+                            <td>{{r._400L_course_titles}}</td>
+                            <td>{{r._400L_course_codes}}</td>
+                            <td>{{r._400L_scores}}</td>
+                            <td>{{r._400L_cu}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <button mat-raised-button (click)="calcGP('400L')" *ngIf='hide400L'>Calculate GP for 400 Level</button>
+            <h5 *ngIf="!hide400L">{{GPs._400L}}</h5>
+        </mat-card><br><br>
+    
+        <button mat-raised-button id="cgpa" (click)="calcGP('CGPA')" *ngIf='!CGPA'>Calculate CGPA</button>
+        <h3 *ngIf="CGPA">Your CGPA is: <br><span>{{CGPA}}</span></h3>
+    </div>
+</body>

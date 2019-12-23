@@ -1,0 +1,104 @@
+<body>
+    <h2>Clearance Information</h2><br>
+    <div *ngIf = 'userInfo' class="userInfo">
+        <p><b>Student's Name:</b> {{userInfo?.surname | titlecase}} {{userInfo?.firstname | titlecase}} {{userInfo?.othername | titlecase }}</p>
+        <p><b>Student's Registration Number:</b> {{userInfo?.reg_no}}</p>
+        <p><b>Student's Department:</b> {{userInfo?.department | titlecase}}</p>
+        <p><b>Student's Faculty:</b> {{userInfo?.faculty | titlecase}}</p>
+        <p><b>Student's Departmental Clearance Status:</b> {{userInfo?.departmentCleared}}</p>
+        <p><b>Student's Faculty Clearance Status:</b> {{userInfo?.facultyCleared}}</p>
+        <p><b>Student's Bursary Clearance Status:</b> {{userInfo?.bursaryCleared}}</p>
+    </div><br>
+    <hr><br>
+    <mat-card *ngIf = " deptDues && deptDues != '' ">
+        <h4>Departmental Payments</h4>
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Payment</th>
+                        <th>Level</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let d of deptDues; let i = index">
+                        <td>{{i + 1}}</td>
+                        <td>{{d.payment}}</td>
+                        <td>{{d.level}}</td>
+                        <td>{{d.status}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </mat-card><br>
+
+    <mat-card *ngIf = " facultyDues && facultyDues != '' ">
+        <h4>Faculty Payments</h4>
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Payment</th>
+                        <th>Level</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let d of facultyDues; let i = index">
+                        <td>{{i + 1}}</td>
+                        <td>{{d.payment}}</td>
+                        <td>{{d.level}}</td>
+                        <td>{{d.status}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </mat-card><br>
+
+    <mat-card *ngIf = " bursaryDues && bursaryDues != '' ">
+        <h4>Bursary Payments</h4>
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Payment</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let d of bursaryDues; let i = index">
+                        <td>{{i + 1}}</td>
+                        <td>{{d.Payment}}</td>
+                        <td>{{d.status}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </mat-card><br>
+
+    <mat-card *ngIf = " otherDues && otherDues != '' ">
+        <h4>Other Payments</h4>
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Payment</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let d of otherDues; let i = index">
+                        <td>{{i + 1}}</td>
+                        <td>{{d.Payment}}</td>
+                        <td>{{d.status}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </mat-card>
+</body>

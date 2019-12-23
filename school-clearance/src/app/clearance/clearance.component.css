@@ -1,0 +1,23 @@
+mat-card {
+    width: 400px;
+    margin: 100px auto;
+}
+
+mat-form-field {
+    width: 100%;
+}
+
+button {
+    width: 100%;
+    letter-spacing: 2px;
+    font-size: 18px;
+    padding: 10px;
+    background: #2A4B8C;
+    color: #fff;
+}
+
+@media ( max-width: 550px ) {
+    mat-card {
+        width: auto;
+    }
+}
